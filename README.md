@@ -48,6 +48,12 @@ To create a database, run:
 docker-compose run web bin/rails db:create
 ```
 
+To enter cli inside a container
+
+```
+docker-compose run web bash
+```
+
 ## Resources
 
 - https://docs.docker.com/samples/rails/

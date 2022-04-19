@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   def home
-    Visit.create! url: '/', ip: request.ip
+    path = '/'
+    ip = request.ip
 
-    @visits = Visit.all
+    @visit = Visit.register path, ip
   end
 end

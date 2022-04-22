@@ -13,7 +13,7 @@ RSpec.describe Visit, type: :model do
 
         expect(Visit.last).to have_attributes(
           url: path,
-          ip: ip,
+          ip:,
           number: 1,
         )
       end
@@ -27,7 +27,7 @@ RSpec.describe Visit, type: :model do
 
         expect(Visit.last).to have_attributes(
           url: path,
-          ip: ip,
+          ip:,
           number: 2,
         )
       end

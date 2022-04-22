@@ -28,6 +28,12 @@ Things you may want to cover:
 docker-compose run --no-deps web rails new . --force --database=postgresql
 ```
 
+## How to run locally
+
+```
+docker-compose up
+```
+
 ## Tips
 
 Every time `Gemfile` or `Dockerfile` or `docker-compose.yml` are changed, the docker image has to be rebuilt:

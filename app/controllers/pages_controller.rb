@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    path = '/'
+    path = "/"
     ip = request.ip
 
     @visit = Visit.register path, ip

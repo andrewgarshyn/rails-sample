@@ -40,6 +40,12 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bundle exec rspec
+      - name: Simplecov Report
+        uses: aki77/simplecov-report-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        
+        
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:

@@ -60,6 +60,13 @@ To enter cli inside a container
 docker-compose run web bash
 ```
 
+How to upgrade ruby with asdf
+
+```
+asdf plugin update ruby
+asdf install ruby <NEWER VERSION>
+```
+
 ## Resources
 
 - https://docs.docker.com/samples/rails/

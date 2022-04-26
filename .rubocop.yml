@@ -3,6 +3,7 @@ require:
 
 AllCops:
   Exclude:
+    - vendor/bundle/**/*
     - config/environments/production.rb
     - config/puma.rb
     - db/schema.rb

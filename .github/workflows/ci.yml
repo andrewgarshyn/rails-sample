@@ -41,7 +41,7 @@ jobs:
       - name: Run tests
         run: bundle exec rspec
       - name: Simplecov Report
-        uses: aki77/simplecov-report-action@v1
+        uses: aki77/simplecov-report-action@c100e8a8bd515c9ed97040cb022a341be2cd6b76 # v1
         with:
           failedThreshold: 80
           token: ${{ secrets.GITHUB_TOKEN }}

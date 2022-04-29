@@ -82,12 +82,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag rails-sample:$(date +%s)-$GITHUB_SHA
+      run: docker build . --file Dockerfile --tag andrewsumup/rails-sample:$(date +%s)-$GITHUB_SHA
     # - name: Push the Docker image
     #   run: docker push andrewsumup/rails-sample:tagname
   push:
     runs-on: ubuntu-latest
-    needs: [build]
+    # needs: [build]
     steps:
     - name: Log in to Docker Hub
       uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9

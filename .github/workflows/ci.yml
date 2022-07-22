@@ -45,13 +45,13 @@ jobs:
         with:
           failedThreshold: 80
           token: ${{ secrets.GITHUB_TOKEN }}
-        
+
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
           name: code-coverage-report
           path: coverage
-  lint:
+  static_analysis:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -66,19 +66,19 @@ jobs:
         run: gem install bundler-audit
       - name: Security audit dependencies
         run: bundle-audit --update
-      
+
       - name: Install brakeman
         run: gem install brakeman
       - name: Security audit application code
         run: brakeman -q -w2
-        
+
       - name: Install rubocop
         run: gem install rubocop
       - name: Lint Ruby files
         run: bundle exec rubocop
   build:
     runs-on: ubuntu-latest
-    needs: [test, lint]
+    needs: [test, static_analysis]
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image

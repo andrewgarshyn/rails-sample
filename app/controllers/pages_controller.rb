@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     path = "/"
     ip = request.ip
 
-    @visit = Visit.register path, ip
+    @visit = Visit.last
+    RegisterVisitJob.perform_later path, ip
   end
 end

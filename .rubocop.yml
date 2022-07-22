@@ -1,5 +1,6 @@
 require:
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   Exclude:
@@ -15,6 +16,12 @@ Metrics/BlockLength:
   IgnoredMethods:
     - context
     - describe
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
 
 Style/ClassAndModuleChildren:
   Enabled: false

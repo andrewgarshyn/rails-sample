@@ -1,1 +1,3 @@
-<h1>Your visits: <%= @visit.number %></h1>
+<h1>Your visits: <%= @visit&.number %></h1>
+
+<p>Previous visit: <%= @visit&.updated_at %></p>
